@@ -27,7 +27,7 @@ class PriceCalculator {
   static double calculateShipping(double totalWeight, String location) {
    
     double baseFee = 5.0;
-    double weightFee = totalWeight * 0.5; // $0.5 per kg
+    double weightFee = totalWeight * 0.5; 
     double locationMultiplier = location == 'remote' ? 1.5 : 1.0;
     
     return (baseFee + weightFee) * locationMultiplier;

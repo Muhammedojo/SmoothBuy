@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../components/dialog_widget.dart';
 import '../components/product_widget.dart';
 import '../screen_controllers/checkout_controller.dart';
 import '../utils/mvc.dart';
@@ -84,9 +85,9 @@ class CheckoutView extends StatelessView<Checkout, CheckoutController> {
           padding: const EdgeInsets.all(20),
           child: Column(
             mainAxisSize: MainAxisSize.min,
-            
+
             children: [
-              SizedBox(height: 10,),
+              SizedBox(height: 10),
               Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(12),
@@ -164,7 +165,10 @@ class CheckoutView extends StatelessView<Checkout, CheckoutController> {
                 children: [
                   Expanded(
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pop(context);
+                        showSuccessDialog(context);
+                      },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Theme.of(context).primaryColor,
                         foregroundColor: Colors.white,
@@ -193,6 +197,16 @@ class CheckoutView extends StatelessView<Checkout, CheckoutController> {
     );
   }
 
+  void showSuccessDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      barrierDismissible: false,
+      builder: (BuildContext dialogContext) {
+        return AlertDialogWidget();
+      },
+    );
+  }
+
   Widget _body(BuildContext context) {
     return Column(
       mainAxisSize: MainAxisSize.min,
@@ -202,11 +216,9 @@ class CheckoutView extends StatelessView<Checkout, CheckoutController> {
               state.cartItems.isEmpty
                   ? _emptyCartPlaceholder()
                   : ListView.separated(
-                    
                     itemCount: state.cartItems.length,
                     separatorBuilder:
-                        (context, index) =>
-                            const SizedBox(height: 2,),
+                        (context, index) => const SizedBox(height: 2),
                     itemBuilder: (context, index) {
                       return Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 4),
