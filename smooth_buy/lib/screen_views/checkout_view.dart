@@ -21,8 +21,10 @@ class CheckoutView extends StatelessView<Checkout, CheckoutController> {
         ),
         actions: [
           IconButton(
-            icon: const Icon(Icons.more_vert, color: Colors.black87),
-            onPressed: () {},
+            icon: const Icon(Icons.logout, color: Colors.red),
+            onPressed: () {
+              state.signOut();
+            },
           ),
         ],
       ),

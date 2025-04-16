@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import '../model/cart_item.dart';
 import '../model/product.dart';
 import '../screen_views/checkout_view.dart';
+import '../utils/auth.dart';
 import '../utils/price_calculator.dart';
+import 'login.dart';
 
 class Checkout extends StatefulWidget {
   
@@ -94,6 +96,16 @@ class CheckoutController extends State<Checkout> {
   @override
   void dispose(){
     super.dispose();
+  }
+
+    signOut(){
+    Auth().signOut();
+    Navigator.pushReplacement<void, void>(
+    context,
+    MaterialPageRoute<void>(
+      builder: (BuildContext context) => const Login(),
+    ),
+  );
   }
 
   @override
