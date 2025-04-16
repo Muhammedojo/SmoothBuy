@@ -1,7 +1,13 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:smooth_buy/screen_controllers/checkout_controller.dart';
+import 'package:smooth_buy/screen_controllers/login.dart';
 
-void main() {
+import 'firebase_options.dart';
+
+void main() async{
+   WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  
   runApp(const MyApp());
 }
 
@@ -17,7 +23,7 @@ class MyApp extends StatelessWidget {
        
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: const Checkout(),
+      home: const Login(),
       debugShowCheckedModeBanner: false,
     );
   }

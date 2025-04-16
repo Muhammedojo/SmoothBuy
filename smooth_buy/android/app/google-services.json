@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "607575888417",
+    "project_id": "cool-fee-management",
+    "storage_bucket": "cool-fee-management.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:607575888417:android:a0bd683e3b6969ff638960",
+        "android_client_info": {
+          "package_name": "com.example.fee_management"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAWIMQh5LKYdb1veA4t4B5alPW-5vHsGaA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:607575888417:android:69bcf9cbf4af5019638960",
+        "android_client_info": {
+          "package_name": "com.example.smooth_buy"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAWIMQh5LKYdb1veA4t4B5alPW-5vHsGaA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
